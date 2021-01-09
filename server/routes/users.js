@@ -4,13 +4,13 @@ const router = require('express').Router()
 const User = require('../model/users.model')
 const bcrypt = require('bcrypt')
 const saltRounds = 10
-const axios = require('axios')
+
 
 router.route('/signup').post((req, res) => {
   bcrypt.hash(req.body.password, saltRounds, function (err, hash) {
     // Store hash in your password DB.
     const newUser = new User({
-      email: req.body.email,
+      username: req.body.email,
       password: hash,
       nominations: []
     })
@@ -46,15 +46,6 @@ router.route('/login').post((req, res) => {
   })
 })
 
-router.route('/movielist').get((req, res) => {
-  // const searchItem = req.body.searchItem
-  const apiKey = process.env.API_KEY
-  const fetchMovieList = async () => {
-    const result = await axios.get(`http://www.omdbapi.com/?s=Batman&apikey=${apiKey}`)
-    res.send(result.data)
-  }
-  fetchMovieList()
-})
 
 
 module.exports = router

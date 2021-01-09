@@ -1,14 +1,18 @@
 require('dotenv').config({ path: 'env' })
 const express = require('express')
 const cors = require('cors')
+const path = require('path')
 const mongoose = require('mongoose')
 const app = express()
 const port = process.env.PORT || 5000
 
 // Middle ware cors will allow us to share resources across origins or servers.This will help connect our server with our client
-app.use(cors())
+app.use(cors({ origin: true }))
 
 // This middle ware will help in parsing data
+var dir = path.join(__dirname, '/images');
+
+app.use(express.static(dir));
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
@@ -28,6 +32,7 @@ app.get('/', (req, res) => {
 const usersRouter = require('./routes/users')
 
 app.use('/users', usersRouter)
+
 
 app.listen(port, () => {
   console.log(`Server is running on ${port}`)

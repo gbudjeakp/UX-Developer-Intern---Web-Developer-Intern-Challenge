@@ -1,31 +1,22 @@
 import React, { useCallback, useState } from 'react'
-import { AppProvider, VisuallyHidden, ActionList, Frame, TopBar } from '@shopify/polaris'
+import { AppProvider, Frame, TopBar } from '@shopify/polaris'
 
 
-export default function Navbar () {
+export default function Navbar ({ searchResult, setSearchResult }) {
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false)
-  const [isSecondaryMenuOpen, setIsSecondaryMenuOpen] = useState(false)
-  const [isSearchActive, setIsSearchActive] = useState(false)
-  const [searchValue, setSearchValue] = useState('')
-
   const toggleIsUserMenuOpen = useCallback(
     () => setIsUserMenuOpen((isUserMenuOpen) => !isUserMenuOpen),
     []
   )
 
-  const toggleIsSecondaryMenuOpen = useCallback(
-    () => setIsSecondaryMenuOpen((isSecondaryMenuOpen) => !isSecondaryMenuOpen),
-    []
-  )
-
+  // This clears up the search bar
   const handleSearchResultsDismiss = useCallback(() => {
-    setIsSearchActive(false)
-    setSearchValue('')
+    setSearchResult('')
   }, [])
 
+  // This handles the search Change
   const handleSearchChange = useCallback((value) => {
-    setSearchValue(value)
-    setIsSearchActive(value.length > 0)
+    setSearchResult(value)
   }, [])
 
   const handleNavigationToggle = useCallback(() => {
@@ -41,7 +32,7 @@ export default function Navbar () {
     logo: {
       width: 124,
       topBarSource:
-        'https://imgur.com/U8oee3C',
+        '',
       accessibilityLabel: 'The Shoppies'
     }
   }
@@ -50,7 +41,7 @@ export default function Navbar () {
     <TopBar.UserMenu
       actions={[
         {
-          items: [{ content: 'Edit user Setting' }]
+          items: [{ content: 'Edit User Setting' }, { content: 'Logout' }]
         }
       ]}
       name='Dharma'
@@ -59,47 +50,22 @@ export default function Navbar () {
     />
   )
 
-  const searchResultsMarkup = (
-    <ActionList
-      items={[{ content: 'This should drop movie list items' }]}
-    />
-  )
-
   const searchFieldMarkup = (
     <TopBar.SearchField
       onChange={handleSearchChange}
-      value={searchValue}
+      value={searchResult}
       placeholder='Search'
       showFocusBorder
     />
   )
 
-  const secondaryMenuMarkup = (
-    <TopBar.Menu
-      activatorContent={
-        <span>
-          <VisuallyHidden>Secondary menu</VisuallyHidden>
-        </span>
-      }
-      open={isSecondaryMenuOpen}
-      onOpen={toggleIsSecondaryMenuOpen}
-      onClose={toggleIsSecondaryMenuOpen}
-      actions={[
-        {
-          items: [{ content: 'Edit User Settings' }]
-        }
-      ]}
-    />
-  )
+  
 
   const topBarMarkup = (
     <TopBar
       showNavigationToggle
       userMenu={userMenuMarkup}
-      secondaryMenu={secondaryMenuMarkup}
-      searchResultsVisible={isSearchActive}
       searchField={searchFieldMarkup}
-      searchResults={searchResultsMarkup}
       onSearchResultsDismiss={handleSearchResultsDismiss}
       onNavigationToggle={handleNavigationToggle}
     />
