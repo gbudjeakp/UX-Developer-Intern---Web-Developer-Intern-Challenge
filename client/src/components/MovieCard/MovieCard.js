@@ -1,42 +1,28 @@
 import React, { useContext } from 'react'
 import { GlobalContext } from '../../context/GlobalState'
-import { AppProvider, MediaCard, Layout, Card } from '@shopify/polaris'
+import { AppProvider, Layout, Card, Button } from '@shopify/polaris'
 
 function MovieCard ({ movies }) {
-  const { nominatemovie } = useContext(GlobalContext)
+  const { nominatemovie, nominationlist } = useContext(GlobalContext)
+
+  // This helps to check and see if we have a matching Title in our array
+  const nominatedMovie = nominationlist.find((o) => o.Title === movies.Title)
+  // This triggers the disabled prop only if the movie exists in the array
+  const nominationListDisabled = !!nominatedMovie
+
   return (
     <div>
       <AppProvider>
         <Layout>
           <Layout.Section>
             <Card sectioned>
-              <MediaCard
-                portrait='true'
-                size='small'
-                title={movies.Title}
-                primaryAction={{
-                  content: 'Nominate',
-                  onAction: () => {
-                    nominatemovie(movies)
-                  }
-                }}
-                description={movies.Year}
-              >
-                <img
-                  alt='Movie Poster'
-                  width='25%'
-                  height='50%'
-                  style={{
-                    objectFit: 'contain',
-                    objectPosition: 'center'
-                  }}
-                  src={movies.Poster}
-                />
-              </MediaCard>
+              <img src={movies.Poster} alt='Movie Poster' />
+              <h1>{movies.Title}</h1>
+              <h3>{movies.Year}</h3>
+              <Button disabled={nominationListDisabled} onClick={() => nominatemovie(movies)}>Nominate</Button>
             </Card>
           </Layout.Section>
         </Layout>
-
       </AppProvider>
     </div>
   )

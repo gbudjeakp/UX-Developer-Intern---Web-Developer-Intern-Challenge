@@ -14,11 +14,11 @@ export const GlobalProvider = props => {
 
   // Actions button
   const nominatemovie = (movies) => {
-    dispatch({ type: 'NOMINATE_MOVIE_FOR_SHOPPIES', payload: movies })
+    dispatch({ type: 'ADD_TO_NOMINATION_LIST', payload: movies })
   }
   return (
     <GlobalContext.Provider value={
-      { NoinationList: state.nominationlist, nominatemovie }
+      { nominationlist: state.nominationlist, nominatemovie }
     }
     >
       {props.children}

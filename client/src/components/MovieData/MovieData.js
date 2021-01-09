@@ -18,7 +18,7 @@ function MovieList () {
     }
     movieList(searchResult)
   }, [searchResult])
-
+  console.log(movies)
   return (
     <div>
       <Navbar searchresult={searchResult} setSearchResult={setSearchResult} />

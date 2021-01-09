@@ -9,8 +9,8 @@ const userSchema = new Schema({
   },
   password: {
     type: String
-  },
-  nomination: [String]
+  }
+
 })
 
 const User = mongoose.model('User', userSchema)

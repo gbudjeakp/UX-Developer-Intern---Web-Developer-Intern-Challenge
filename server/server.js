@@ -10,9 +10,9 @@ const port = process.env.PORT || 5000
 app.use(cors({ origin: true }))
 
 // This middle ware will help in parsing data
-var dir = path.join(__dirname, '/images');
+var dir = path.join(__dirname, '/images')
 
-app.use(express.static(dir));
+app.use(express.static(dir))
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
@@ -30,9 +30,9 @@ app.get('/', (req, res) => {
 })
 
 const usersRouter = require('./routes/users')
-
+const nominationsRouter = require('./routes/nominations')
 app.use('/users', usersRouter)
-
+app.use('/nominations', nominationsRouter)
 
 app.listen(port, () => {
   console.log(`Server is running on ${port}`)
