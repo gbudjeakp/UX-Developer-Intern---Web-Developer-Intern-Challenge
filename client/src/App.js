@@ -4,7 +4,6 @@ import { GlobalProvider } from './context/GlobalState'
 // import NominationList from './components/NominationList/Nomination'
 import MovieData from './components/MovieData/MovieData'
 
-
 function App () {
   return (
     <div>

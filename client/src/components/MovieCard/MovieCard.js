@@ -1,26 +1,31 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { GlobalContext } from '../../context/GlobalState'
 import { AppProvider, MediaCard, Layout, Card } from '@shopify/polaris'
 
 function MovieCard ({ movies }) {
+  const { nominatemovie } = useContext(GlobalContext)
   return (
     <div>
       <AppProvider>
         <Layout>
           <Layout.Section>
-            <Card sectioned style={{ backgroundColor: 'Black' }}>
+            <Card sectioned>
               <MediaCard
+                portrait='true'
                 size='small'
                 title={movies.Title}
                 primaryAction={{
                   content: 'Nominate',
-                  onAction: () => {}
+                  onAction: () => {
+                    nominatemovie(movies)
+                  }
                 }}
                 description={movies.Year}
               >
                 <img
-                  alt=''
-                  width='100%'
-                  height='100%'
+                  alt='Movie Poster'
+                  width='25%'
+                  height='50%'
                   style={{
                     objectFit: 'contain',
                     objectPosition: 'center'
