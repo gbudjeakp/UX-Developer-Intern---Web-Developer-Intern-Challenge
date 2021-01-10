@@ -18,4 +18,8 @@ router.route('/addnomination').post((req, res) => {
   })
 })
 
+router.route('/nominationList').get((req, res) => {
+  Nomination.findAll({})
+})
+
 module.exports = router
