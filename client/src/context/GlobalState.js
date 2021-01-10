@@ -12,6 +12,10 @@ export const GlobalContext = createContext(initialState)
 export const GlobalProvider = props => {
   const [state, dispatch] = useReducer(AppReducer, initialState)
 
+  useEffect(() => {
+    window.localStorage.setItem('nominationlist', JSON.stringify(state.nominationlist))
+  })
+
   // Actions button
   const nominatemovie = (movies) => {
     dispatch({ type: 'ADD_TO_NOMINATION_LIST', payload: movies })
