@@ -43,7 +43,7 @@ I created a nomination list component created in the client directory. This comp
  
  - [x] Display a banner when the user has 5 nominations.
    #### Approach ####
- To achieve this feature, I simply created an Alert components and used some basic `if` logic to check the `nominationlist` array to see if it contained five items and that if it did, it should render the ShopifyPolaris `Banner` component.
+ To achieve this feature, I simply created an Alert components and used some basic `if` logic to check the `nominationlist` array to see if it contained five items and that if it did, it should render the ShopifyPolaris `Banner` component. I wasn't too sure what the banner was for so added some logic that would disabled all the buttons once the user had nominated five movies. The Banner in this case was used to explain to the user, that they they could only make five choices along with instructions on how to change their choices.
  
  ## Extras ##
  - [x] Save nomination lists if the user leaves the page
@@ -53,9 +53,9 @@ I created a nomination list component created in the client directory. This comp
 ### Challenges encountered and fixes used ###
 The main challenege I faced while working, was the UI. Once i started using the Polaris components, it became evident to me that it was not designed to take on tasks like this but notheless, i still wanted to use it. I first tried adding custome CSS styles to the Polaris components but soon found out that they did not work. The lack of css customization left the UI looking too big and hard to utilize. 
 
- ![picture alt](http://via.placeholder.com/200x150 "Title is optional")
+ ![picture alt](https://imgur.com/G8HOLlE "Problem")
 
  #### The Fix ####
  To solve this UI/UX crises, I ended up wrapping the Polaris components in `<div>`'s and then styling those div using inline css. Though this did not give me the ability to fully customize the UI, i was able to make it look presentable. 
 
- ![picture alt](http://via.placeholder.com/200x150 "Title is optional")
+ ![picture alt](http://via.placeholder.com/200x150 "Problem Fix")
