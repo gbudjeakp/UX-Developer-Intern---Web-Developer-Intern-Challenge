@@ -58,4 +58,4 @@ The main challenege I faced while working, was the UI. Once i started using the 
  #### The Fix ####
  To solve this UI/UX crises, I ended up wrapping the Polaris components in `<div>`'s and then styling those div using inline css. Though this did not give me the ability to fully customize the UI, i was able to make it look presentable.
 
- ![picture alt]((https://github.com/gbudjeakp/UX-Developer-Intern---Web-Developer-Intern-Challenge/tree/main/refimages/afterfix.png?raw=true0 "Problem Fix")
+ ![picture of fixed UI problem](/refimages/beforefix.png?raw=true)
