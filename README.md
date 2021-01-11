@@ -58,4 +58,4 @@ The main challenege I faced while working, was the UI. Once i started using the 
  #### The Fix ####
  To solve this UI/UX crises, I ended up wrapping the Polaris components in `<div>`'s and then styling those div using inline css. Though this did not give me the ability to fully customize the UI, i was able to make it look presentable.
 
- ![picture of fixed UI problem](/refimages/afterfix.png?raw=true)
+ ![picture of fixed UI problem](/refimages/Afterfix.png?raw=true)
