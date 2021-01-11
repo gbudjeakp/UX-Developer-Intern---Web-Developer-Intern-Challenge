@@ -8,10 +8,9 @@ function Alert () {
       {(nominationlist.length === 5) && (
         <AppProvider>
           <Banner
-            title='Your shipping label is ready to print.'
+            title='You have now added five movies to your nomination list.'
             status='success'
-            action={{ content: 'Print label' }}
-            onDismiss={() => {}}
+            // onDismiss={() => {}}
           />
         </AppProvider>
 

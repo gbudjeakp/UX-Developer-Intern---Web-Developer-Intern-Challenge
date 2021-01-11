@@ -3,12 +3,6 @@ import { AppProvider, Frame, TopBar } from '@shopify/polaris'
 import Alert from '../Alert/Alert'
 
 export default function Navbar ({ searchResult, setSearchResult }) {
-  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false)
-  const toggleIsUserMenuOpen = useCallback(
-    () => setIsUserMenuOpen((isUserMenuOpen) => !isUserMenuOpen),
-    []
-  )
-
   // This clears up the search bar
   const handleSearchResultsDismiss = useCallback(() => {
     setSearchResult('')
@@ -50,12 +44,15 @@ export default function Navbar ({ searchResult, setSearchResult }) {
   )
 
   return (
-    <div style={{ height: '50px' }}>
+    <div style={{ height: '100px' }}>
       <AppProvider
         theme={theme}
       >
-        <Alert />
+        <div style={{ paddingTop: '50px', position: 'fixed' }}>
+          <Alert />
+        </div>
         <Frame topBar={topBarMarkup} />
+
       </AppProvider>
     </div>
   )
