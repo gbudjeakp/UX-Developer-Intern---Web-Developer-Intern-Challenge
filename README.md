@@ -51,7 +51,7 @@ I created a nomination list component created in the client directory. This comp
    In order to make the data persist, I made use of `localStorage` and stored the `nominationlist` array in there and also retrieved data from `localStorage`
    
 ### Challenges encountered and fixes used ###
-The main challenege I faced while working, was the UI. Once i started using the Polaris components, it became evident to me that it was not designed to take on tasks like this but notheless, i still wanted to use it. I first tried adding custome CSS styles to the Polaris components but soon found out that they did not work. The lack of css customization left the UI looking too big and hard to utilize. 
+The main challenege I faced while working, was the UI. Once i started using the Polaris components, it became evident to me that it was not designed to take on tasks like this but notheless, i still wanted to use it. I first tried adding custome CSS styles to the Polaris components but soon found out that they did not work. The lack of css customization left the UI looking too big and hard to utilize. One thing about ShopifyPolaris that was amazing to me, was the level of resonsiveness it had. Even after resizing the components, it still somehow retained its responsiveness. 
 
  ![Picture of UI problem](/refimages/beforefix.png?raw=true)
 
@@ -59,3 +59,6 @@ The main challenege I faced while working, was the UI. Once i started using the 
  To solve this UI/UX crises, I ended up wrapping the Polaris components in `<div>`'s and then styling those div using inline css. Though this did not give me the ability to fully customize the UI, i was able to make it look presentable.
 
  ![picture of fixed UI problem](/refimages/Afterfix.png?raw=true)
+
+## Conclusion ##
+There were some things I couldn't figure out how to do with Polaris. using the menu items to form links. I did however com up with a weird fix for that.  I really enjoyed working on this challenge, as it allowed me to try techniques and technologies I had not used before. 
