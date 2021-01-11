@@ -2,7 +2,7 @@ import React, { createContext, useReducer, useEffect } from 'react'
 import AppReducer from './AppReducer'
 // initial state
 const initialState = {
-  nominationlist: []
+  nominationlist: window.localStorage.getItem('nominationlist') ? JSON.parse(window.localStorage.getItem('nominationlist')) : []
 }
 
 // creating context and exporting it
@@ -20,9 +20,20 @@ export const GlobalProvider = props => {
   const nominatemovie = (movies) => {
     dispatch({ type: 'ADD_TO_NOMINATION_LIST', payload: movies })
   }
+
+ 
+  const removeNomination = (Title) => {
+    dispatch({ type: 'REMOVE_FROM_NOMINATIONLIST', payload: Title })
+  }
+
   return (
     <GlobalContext.Provider value={
-      { nominationlist: state.nominationlist, nominatemovie }
+      {
+        nominationlist: state.nominationlist,
+        nominatemovie,
+        removeNomination
+    
+      }
     }
     >
       {props.children}

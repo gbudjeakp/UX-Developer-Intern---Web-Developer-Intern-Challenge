@@ -7,6 +7,11 @@ export default (state, action) => {
         ...state,
         nominationlist: [action.payload, ...state.nominationlist]
       }
+    case 'REMOVE_FROM_NOMINATIONLIST':
+      return {
+        ...state,
+        nominationlist: state.nominationlist.filter(movies => movies.Title !== action.payload)
+      }
     default:
       return state
   }

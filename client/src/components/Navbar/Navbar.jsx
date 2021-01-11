@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react'
 import { AppProvider, Frame, TopBar } from '@shopify/polaris'
-
+import Alert from '../Alert/Alert'
 
 export default function Navbar ({ searchResult, setSearchResult }) {
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false)
@@ -28,27 +28,8 @@ export default function Navbar ({ searchResult, setSearchResult }) {
       topBar: {
         background: '#95BF47'
       }
-    },
-    logo: {
-      width: 124,
-      topBarSource:
-        '',
-      accessibilityLabel: 'The Shoppies'
     }
   }
-
-  const userMenuMarkup = (
-    <TopBar.UserMenu
-      actions={[
-        {
-          items: [{ content: 'Edit User Setting' }, { content: 'Logout' }]
-        }
-      ]}
-      name='Dharma'
-      open={isUserMenuOpen}
-      onToggle={toggleIsUserMenuOpen}
-    />
-  )
 
   const searchFieldMarkup = (
     <TopBar.SearchField
@@ -59,12 +40,9 @@ export default function Navbar ({ searchResult, setSearchResult }) {
     />
   )
 
-  
-
   const topBarMarkup = (
     <TopBar
       showNavigationToggle
-      userMenu={userMenuMarkup}
       searchField={searchFieldMarkup}
       onSearchResultsDismiss={handleSearchResultsDismiss}
       onNavigationToggle={handleNavigationToggle}
@@ -72,26 +50,11 @@ export default function Navbar ({ searchResult, setSearchResult }) {
   )
 
   return (
-    <div style={{ height: '250px' }}>
+    <div style={{ height: '50px' }}>
       <AppProvider
         theme={theme}
-        i18n={{
-          Polaris: {
-            Avatar: {
-              label: 'Avatar',
-              labelWithInitials: 'Avatar with initials {initials}'
-            },
-            Frame: { skipToContent: 'Skip to content' },
-            TopBar: {
-              toggleMenuLabel: 'Toggle menu',
-              SearchField: {
-                clearButtonLabel: 'Clear',
-                search: 'Search'
-              }
-            }
-          }
-        }}
       >
+        <Alert />
         <Frame topBar={topBarMarkup} />
       </AppProvider>
     </div>
