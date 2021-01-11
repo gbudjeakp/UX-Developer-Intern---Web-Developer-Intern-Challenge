@@ -30,7 +30,12 @@ After a couple hours with the Polaris documentation, I now knew how to work it. 
 I rendered them into Polaris `Card` component and this was were I encountered my first [challenge](#challenge1). 
 
  - [x] Updates to the search terms should update the result list
- This was easy to do. All I had to do was set the useEffect dependecy to a state called `searchresult` and then pass that state as a prop to the shopifyPolaris `Top bar` component. Then the search input field was monitored for changes. Any change to the search field would cause the useEffect to fetch data matching the input.
+ This was easy to do. All I had to do was set the useEffect dependecy to a state called `searchresult` and then pass that state as a prop to the shopifyPolaris `Top bar` component. Then the search input field in the `Top bar` component was monitored for changes. Any change to the search field would cause the useEffect to fetch data matching the input.
 
  - [x] Movies in search results can be added and removed from the nomination list.
+ A nomination list component was created in react client directory. This component was passed a prop using the context API which had an empty array state called `nominationlist` which was used to hold the API data (movie title, year and id). In the cotext API component, the state was set to contain whatever details of what card was being nominated through the use of the App reducer. That state was then mapped through and used to populate the nominationlist component. In order to remove items from the list, the `nominationlist` was filtered to match the title.
+ 
+- [x] If a search result has already been nominated, disable its nominate button.
+ All i had to do for this was to use the `.find()` method which returns the value of the first element in a provided array that satisfies the provided testing function, to look into our `nominationlist` array which comes from our context API to see if a title was already added to the array. A diabled prop was added to the `Button` component and set to the value of whatever the `.find()` method produced. if it was true then the button would be disabled but if false, it would not.
+ 
 ### Challenges encountered and fixes used ###
