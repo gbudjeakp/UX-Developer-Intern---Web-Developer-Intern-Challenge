@@ -7,11 +7,12 @@ function Alert () {
     <div>
       {(nominationlist.length === 5) && (
         <AppProvider>
-          <Banner
-            title='You have now added five movies to your nomination list.'
-            status='success'
-            // onDismiss={() => {}}
-          />
+          <div style={{ paddingBottm: '90px' }}>
+            <Banner
+              title='You have now selected your top 5 nominations. Want to change your top 5? click on nomination list and remove unwanted nominations'
+              status='success'
+            />
+          </div>
         </AppProvider>
 
       )}

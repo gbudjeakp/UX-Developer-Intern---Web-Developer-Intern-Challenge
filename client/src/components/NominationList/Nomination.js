@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { GlobalContext } from '../../context/GlobalState'
-import { MediaCard, Layout, AppProvider, Card } from '@shopify/polaris'
+import { Link } from 'react-router-dom'
+import { MediaCard, Layout, AppProvider } from '@shopify/polaris'
 
 function Nomination () {
   const { nominationlist, removeNomination } = useContext(GlobalContext)
@@ -8,35 +9,37 @@ function Nomination () {
   return (
     <div>
       <AppProvider>
+        <Link to='/'>Home</Link>
         <Layout>
           <Layout.Section>
             {nominationlist.length > 0 ? (
-              <div>
+              <div style={{ width: '50%', marginLeft: '120px', paddingBottom: '20px', paddingTop: '10px' }}>
                 {nominationlist.map((movie, index) => (
-                  <Card key={index}>
-                    <MediaCard
-                      title={movie.title}
-                      size='small'
-                      primaryAction={{
-                        content: 'Remove Nominee',
-                        onAction: () => {
-                          removeNomination(movie.Title)
-                        }
+
+                  <MediaCard
+                    key={index}
+                    title={movie.Title}
+                    size='small'
+                    primaryAction={{
+                      content: 'Remove Nominee',
+                      onAction: () => {
+                        removeNomination(movie.Title)
+                      }
+                    }}
+                    description={movie.Year}
+                  >
+                    <img
+                      alt='Movie Poster'
+                      width='100%'
+                      height='100%'
+                      style={{
+                        objectFit: 'cover',
+                        objectPosition: 'center'
                       }}
-                      description={movie.Year}
-                    >
-                      <img
-                        alt='Movie Poster'
-                        width='100%'
-                        height='100%'
-                        style={{
-                          objectFit: 'cover',
-                          objectPosition: 'center'
-                        }}
-                        src={movie.Poster}
-                      />
-                    </MediaCard>
-                  </Card>
+                      src={movie.Poster}
+                    />
+                  </MediaCard>
+
                 ))}
               </div>
             ) : (
