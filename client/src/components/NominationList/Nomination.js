@@ -8,12 +8,14 @@ function Nomination () {
 
   return (
     <div>
+      <div style={{ paddingBottom: '10px' }}>
+        <Link style={{ color: 'black', backgroundColor: '#95BF47', textDecoration: 'none', padding: '15px 32px', marginLeft: '25px', position: 'fixed' }} to='/'>Home</Link>
+    </div>
       <AppProvider>
-        <Link to='/'>Home</Link>
         <Layout>
           <Layout.Section>
             {nominationlist.length > 0 ? (
-              <div style={{ width: '50%', marginLeft: '120px', paddingBottom: '20px', paddingTop: '10px' }}>
+              <div style={{ width: '50%', marginLeft: '120px', paddingBottom: '20px', paddingTop: '20px' }}>
                 {nominationlist.map((movie, index) => (
 
                   <MediaCard
@@ -43,7 +45,7 @@ function Nomination () {
                 ))}
               </div>
             ) : (
-              <h2 style={{ fontSize: '20px', marginLeft: '55px', width: '70%' }}>There are currently no movies in your nomination list! Nominate some by searching up your favourite movies and clicking the nominate button to add them!</h2>
+              <h2 style={{ fontSize: '20px', marginLeft: '55px', width: '70%', paddingTop: '55px' }}>There are currently no movies in your nomination list! Nominate some by searching up your favourite movies and clicking the nominate button to add them!</h2>
             )}
           </Layout.Section>
         </Layout>

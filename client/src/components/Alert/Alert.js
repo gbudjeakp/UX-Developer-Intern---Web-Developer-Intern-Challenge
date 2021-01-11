@@ -7,9 +7,9 @@ function Alert () {
     <div>
       {(nominationlist.length === 5) && (
         <AppProvider>
-          <div style={{ paddingBottm: '90px' }}>
+          <div>
             <Banner
-              title='You have now selected your top 5 nominations. Want to change your top 5? click on nomination list and remove unwanted nominations'
+              title='You have now selected your top 5 nominations. Note that you can only nominate your favourite 5 movies. If you are not happy with your selection, click the "Nominations List" button above to remove selections'
               status='success'
             />
           </div>

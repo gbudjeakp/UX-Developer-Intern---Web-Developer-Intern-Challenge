@@ -14,10 +14,6 @@ export default function Navbar ({ searchResult, setSearchResult }) {
     setSearchResult(value)
   })
 
-  const handleNavigationToggle = useCallback(() => {
-    console.log('toggle navigation visibility')
-  }, [])
-
   const theme = {
     colors: {
       topBar: {
@@ -37,10 +33,8 @@ export default function Navbar ({ searchResult, setSearchResult }) {
 
   const topBarMarkup = (
     <TopBar
-      showNavigationToggle
       searchField={searchFieldMarkup}
       onSearchResultsDismiss={handleSearchResultsDismiss}
-      onNavigationToggle={handleNavigationToggle}
     />
   )
 

@@ -16,7 +16,6 @@ function MovieCard ({ movies }) {
   return (
     <div>
       <AppProvider>
-
         <div style={{ width: '50%', marginLeft: '120px', paddingBottom: '20px', paddingTop: '10px' }}>
           <MediaCard
             title={movies.Title}

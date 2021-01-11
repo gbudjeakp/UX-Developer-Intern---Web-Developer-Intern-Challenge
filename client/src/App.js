@@ -17,10 +17,11 @@ function App () {
             paddingBottom: '60px'
           }}
           >
-            <Link to='/nominations'>Nominations List</Link>
+            <Link style={{ color: 'black', backgroundColor: '#95BF47', textDecoration: 'none', padding: '15px 32px', marginLeft: '25px', position: 'fixed' }} to='/nominations'>Nominations List</Link>
           </div>
           <Switch>
             <Route exact path='/'>
+              <h1 style={{ fontSize: '20px', textAlign: 'center' }}>Search and Nominate your favourite movie for the Shoppies Award</h1>
               <MovieData />
             </Route>
             <Route exact path='/nominations'>
