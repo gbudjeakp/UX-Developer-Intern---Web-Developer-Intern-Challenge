@@ -53,7 +53,7 @@ I created a nomination list component created in the client directory. This comp
 ### Challenges encountered and fixes used ###
 The main challenege I faced while working, was the UI. Once i started using the Polaris components, it became evident to me that it was not designed to take on tasks like this but notheless, i still wanted to use it. I first tried adding custome CSS styles to the Polaris components but soon found out that they did not work. The lack of css customization left the UI looking too big and hard to utilize. 
 
- ![picture alt](https://imgur.com/G8HOLlE "Problem")
+ ![picture alt]("https://imgur.com/G8HOLlE" "Problem")
 
  #### The Fix ####
  To solve this UI/UX crises, I ended up wrapping the Polaris components in `<div>`'s and then styling those div using inline css. Though this did not give me the ability to fully customize the UI, i was able to make it look presentable. 
