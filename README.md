@@ -27,7 +27,7 @@ After a couple of hours with the React documentation, I had a rough idea of how 
 When it came time to display the search result, I wondered what Shopify used for their UI/UX components. 
 A quick google search and I see ShopifyPolaris. So I decided to try using it as opposed to Material UI which I normally use for my projects. 
 After a couple hours with the Polaris documentation, I now knew how to work it. After mapping through the data from the API, 
-I rendered them into Polaris `Card` component and this was were I encountered my first (#challenge-1). 
+I rendered them into Polaris `Card` component and this was were I encountered my first [challeng](#challenge1). 
 
  - [x] Updates to the search terms should update the result list
 
