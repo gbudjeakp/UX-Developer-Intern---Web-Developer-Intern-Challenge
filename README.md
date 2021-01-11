@@ -26,10 +26,8 @@ the s parammeter was used to allow for query search using the title.
   #### Approach ####
 For this part of the challenge, I decided to try something new by using context API as I read that it saves one from prop spreading.
 After a couple of hours with the React documentation, I had a rough idea of how it worked and proceeded to use it. 
-When it came time to display the search result, I wondered what Shopify used for their UI/UX components. 
-A quick google search and I see ShopifyPolaris. So I decided to try using it as opposed to Material UI which I normally use for my projects. 
-After a couple hours with the Polaris documentation, I now knew how to work it. After mapping through the data from the API, 
-I rendered them into Polaris `Card` component and this was were I encountered my first [challenge](#challenge1). 
+When it came time to display the search result, I wondered what Shopify used for their UI/UX components since I was going to be applying for an internship position, it made sense to see what technology they used to develop their UI. A quick google search and I see ShopifyPolaris. So I decided to try using it as opposed to Material UI which I normally use for my projects. After a couple hours with the Polaris documentation, I now knew how to work it, to some extent. After mapping through the data from the API, 
+I rendered them into Polaris `MediaCard` component. 
 
  - [x] Updates to the search terms should update the result list
   #### Approach ####
@@ -41,7 +39,7 @@ I created a nomination list component created in the client directory. This comp
  
 - [x] If a search result has already been nominated, disable its nominate button.
   #### Approach ####
- All i had to do for this was to use the `.find()` method which returns the value of the first element in a provided array that satisfies the provided testing function, to look into our `nominationlist` array which comes from our context API to see if a title was already added to the array. A diabled prop was added to the `Button` component and set to the value of whatever the `.find()` method produced. if it was true then the button would be disabled but if false, it would not.
+ All i had to do for this was to use the `.find()` method which returns the value of the first element in a provided array that satisfies the provided testing function, to look into our `nominationlist` array which comes from our context API to see if a title was already added to the array. A disabled prop was added to the `Media Card` component and set to the value of whatever the `.find()` method produced. if it was true then the button would be disabled but if false, it would not.
  
  - [x] Display a banner when the user has 5 nominations.
    #### Approach ####
@@ -53,3 +51,11 @@ I created a nomination list component created in the client directory. This comp
    In order to make the data persist, I made use of `localStorage` and stored the `nominationlist` array in there and also retrieved data from `localStorage`
    
 ### Challenges encountered and fixes used ###
+The main challenege I faced while working, was the UI. Once i started using the Polaris components, it became evident to me that it was not designed to take on tasks like this but notheless, i still wanted to use it. I first tried adding custome CSS styles to the Polaris components but soon found out that they did not work. The lack of css customization left the UI looking too big and hard to utilize. 
+
+ ![picture alt](http://via.placeholder.com/200x150 "Title is optional")
+
+ #### The Fix ####
+ To solve this UI/UX crises, I ended up wrapping the Polaris components in `<div>`'s and then styling those div using inline css. Though this did not give me the ability to fully customize the UI, i was able to make it look presentable. 
+
+ ![picture alt](http://via.placeholder.com/200x150 "Title is optional")
