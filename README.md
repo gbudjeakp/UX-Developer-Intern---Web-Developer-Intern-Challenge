@@ -13,7 +13,7 @@ if for any reason the broswer does not open, manually open the browser and type 
 
 ## Technical Requirements ##
  - [x] Search results should come from OMDB's API (free API key: `http://www.omdbapi.com/apikey.aspx)`.
-  #### Heading 4 ####
+  #### Approach ####
 I accomplished this by using React Hooks specifically React useEffect and useState. 
 API call was made using useEffect so that on page load, the data from the API would be ready for use.
 useState hook was used to set the state of the data/information gotten from the API. In this case, the data was the movie title, year and id
