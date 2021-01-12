@@ -10,7 +10,7 @@ function MovieList () {
   // const apiKey = process.env.API_KEY
   useEffect(() => {
     const movieList = async (searchResult) => {
-      const fetchUrl = await axios.get(`http://www.omdbapi.com/?s=${searchResult}&apikey=${process.env.REACT_APP_API_KEY}`)
+      const fetchUrl = await axios.get(`https://www.omdbapi.com/?s=${searchResult}&apikey=${process.env.REACT_APP_API_KEY}`)
       const data = fetchUrl.data
       if (data.Search) {
         setMovies(data.Search)
