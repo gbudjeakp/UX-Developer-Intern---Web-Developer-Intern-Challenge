@@ -60,5 +60,8 @@ The main challenege I faced while working, was the UI. Once i started using the 
 
  ![picture of fixed UI problem](/refimages/Afterfix.png?raw=true)
 
+## CI/CD ##
+Since the app was hosted using netlify, it was easy to connect to github. Thus any time changes were made and pushed to the git repo, Netlify would detect those changes, and apply them to the application on the netlify server. 
+
 ## Conclusion ##
-There were some things I couldn't figure out how to do with Polaris. using the menu items to form links. I did however com up with a weird fix for that.  I really enjoyed working on this challenge, as it allowed me to try techniques and technologies I had not used before. 
+There were some things I couldn't figure out how to do with Polaris. using the menu items to form links and some small styling issues as a result of tempering with the Polaris styles. I really enjoyed working on this challenge, as it allowed me to try techniques and technologies I had not used before. 
