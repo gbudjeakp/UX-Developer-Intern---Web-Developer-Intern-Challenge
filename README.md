@@ -1,5 +1,5 @@
 # UX-Developer-Intern---Web-Developer-Intern-Challenge
-## Application Link: *Some Link*
+## Application Link: [https://theshoppiesaward.netlify.app]
 
 ##  How to run application locally(on your computer)
 In the project directory, change your directory to the "client" directory/folder in your teerminal 
