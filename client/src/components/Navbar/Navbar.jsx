@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useCallback } from 'react'
 import { AppProvider, Frame, TopBar } from '@shopify/polaris'
-import Alert from '../Alert/Alert'
+
 
 export default function Navbar ({ searchResult, setSearchResult }) {
   // This clears up the search bar
@@ -43,9 +43,6 @@ export default function Navbar ({ searchResult, setSearchResult }) {
       <AppProvider
         theme={theme}
       >
-        <div style={{ padding: '0', position: 'fixed' }}>
-          <Alert />
-        </div>
         {/* Searfield will not display if the end point wnds with the nominations route */}
         {window.location.pathname !== '/nominations' ? <Frame topBar={topBarMarkup} /> : null}
       </AppProvider>
